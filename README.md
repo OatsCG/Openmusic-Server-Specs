@@ -4,9 +4,14 @@ An *openmusic-compatible* server is any public server which [the openmusic app](
 ### Copyright Notice
 The content provided by your server MUST be licenced or owned by you, the content deliverer. It is the responsibility of the content deliverer to ensure that copyright laws for your country are followed, and to ensure the legal safety of openmusic users. Failure to do so may result in server termination by your ISP, and legal pursuit by the owners of the content you are delivering.
 
+### Getting Started
+Begin by getting familiar with the Return Types and Endpoints BEFORE creating your server. Once comfortable, read the Heuristics and create your database. Check out the [Downloadable OpenMusic Database](https://github.com/OatsCG/OMDB) for inspiration on designing your database.
+
+
+
 ## Preliminary Info
-### Database Structure and Best Practices
-Your database may or may not strictly conform to the Return Types, however to ensure consistency for openmusic users (especially when items are saved to a Library or Playlists), the following heuristics should be followed when returning data via server endpoints. Get familiar with the Return Types and Endpoints BEFORE creating your database and reading the heuristics.
+### Database Structure and Heuristics
+Your database may or may not strictly conform to the Return Types, however to ensure consistency for openmusic users (especially when items are saved to a Library or Playlists), the following heuristics should be followed when returning data via server endpoints:
 1. **Object IDs must be persistent.** The following abstract data should never change:
   * Track.TrackID
   * Album.AlbumID
