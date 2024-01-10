@@ -17,7 +17,7 @@ Your database may or may not strictly conform to the Return Types, however to en
 4. **Follow the Return Types strictly,** or else the app will not recognize the data, and will show nothing to the user. To help, set up your server so that you can see which endpoints the app is fetching and where.
 
 
-This is an incomplete list of heuristics, but should be enough to get started. Once your database is created, test scripts to return albums, tracks and playbacks. Then, start with some simple endpoints like `/search` and `/playback`, and continue with the rest from there. Remember to test thoroughly in the app.
+This is an incomplete list of heuristics, but should be enough to get started. Once your database is created, you should test scripts to return albums, tracks and playbacks. Then, start with some simple endpoints like `/search` and `/playback`, and continue with the rest from there. Remember to test thoroughly in the app.
 
 
 # Return Types
