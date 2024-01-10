@@ -169,7 +169,7 @@ Returns tracks that fuzzy match `<song>`, `<album>`, and `<artist>`
 * `<album>`: Album title
 * `<artists>`: Artist names, comma seperated
 ```
-/exact?song=<title>&album=<album title>&artist=<artist name> -> {
+/exact?song=<song>&album=<album>&artist=<artist> -> {
     Tracks: ImportedTrack[]
 }
 ```
