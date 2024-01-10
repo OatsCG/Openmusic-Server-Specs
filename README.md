@@ -6,7 +6,7 @@ The content provided by your server MUST be licenced or owned by you, the conten
 
 ## Preliminary Info
 ### Database Structure and Best Practices
-Your database may or may not strictly conform to the Return Types, however to ensure consistency for openmusic users (especially when items are saved to a Library or Playlists), the following heuristics should be followed when returning data via server endpoints:
+Your database may or may not strictly conform to the Return Types, however to ensure consistency for openmusic users (especially when items are saved to a Library or Playlists), the following heuristics should be followed when returning data via server endpoints. Get familiar with the Return Types and Endpoints BEFORE creating your database and reading the heuristics.
 1. **Object IDs must be persistent.** The following abstract data should never change:
   * Track.TrackID
   * Album.AlbumID
