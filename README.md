@@ -39,6 +39,7 @@ ImportedTrack -> {
     artistScore: Float
 }
 ```
+`titleScore`, `albumScore`, and `artistScore` must be normalized, and denote the fuzzy text similarity to the track specified by the `/exact` endpoint.
 ### PlaylistTrack
 ```
 PlaylistTrack -> {
@@ -112,7 +113,16 @@ ExploreShelf -> {
 # Server Endpoints
 An endpoint may return a single Return Type as a dictionary, or a dictionary containing multiple objects and arrays, as specified.
 
+### `/status`
+Returns the status of the server. Hopefully you set `online=True`.
 
+`om_verify` is the verification code used to denote your server as "**Verified**" in the openmusic app. If you do not run a trusted server, leave `om_verify` blank and the openmusic app will denote your server as "**Online**".
+```
+/status -> {
+    online: Bool
+    om_verify: String
+    }
+```
 ### `/search?q=<query>`
 Returns search results for `<query>`
 ```
@@ -181,8 +191,8 @@ Returns shelves to display in the Explore page
 }
 ```
 ### `/quick?q=<query>`
-Returns tracks to be displayed as the user is typing a search
-* `<query>`: 
+Returns tracks to be quickly displayed as the user is typing a search
+* `<query>`: An incomplete search query
 ```
 /quick?q=<query> -> {
     Tracks: FetchedTrack[]
