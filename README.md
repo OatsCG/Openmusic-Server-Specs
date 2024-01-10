@@ -101,6 +101,13 @@ FetchedPlayback -> {
     Playback_Audio_URL: String
 }
 ```
+### ExploreShelf
+```
+ExploreShelf -> {
+    Title: String
+    Albums: SearchedAlbum[]
+}
+```
 
 # Server Endpoints
 An endpoint may return a single Return Type as a dictionary, or a dictionary containing multiple objects and arrays, as specified.
@@ -108,7 +115,6 @@ An endpoint may return a single Return Type as a dictionary, or a dictionary con
 
 ### `/search?q=<query>`
 Returns search results for `<query>`
-* `<query>: String` The users' search phrase
 ```
 /search?q=<query> -> {
     Tracks: FetchedTrack[]
@@ -132,13 +138,53 @@ Returns the playback with `FetchedPlayback.PlaybackID=<PlaybackID>`
 ```
 /playback?id=<PlaybackID> -> FetchedPlayback
 ```
-### `/exact?song=<title>&album=<album title>&artist=<artist name>`
-Returns tracks that fuzzy match `<title>`, `<album title>`, and `<artist name>`
-* `<title>`: Track title
-* `<album title>`: Album title
-* `<artist name>`: Artists name, comma seperated
+### `/exact?song=<song>&album=<album>&artist=<artist>`
+Returns tracks that fuzzy match `<song>`, `<album>`, and `<artist>`
+* `<song>`: Track title
+* `<album>`: Album title
+* `<artists>`: Artist names, comma seperated
 ```
 /exact?song=<title>&album=<album title>&artist=<artist name> -> {
     Tracks: ImportedTrack[]
+}
+```
+### `/playlistinfo?platform=<platform>&id=<id>`
+Returns metadata about a playlist from another platform. See the [PlaylistExtractor](https://github.com/OatsCG/PlaylistExtractor) for help.
+* `<platform>`: One of `['apple', 'spotify']`
+* `<id>`: The ID in the playlist's URL
+```
+/playlistinfo?platform=<platform>&id=<id> -> {
+    name: String
+    description: String
+    artwork: String
+    playlistID: String
+}
+```
+### `/playlisttracks?platform=<platform>&id=<id>`
+Returns the tracks in a playlist from another platform. See the [PlaylistExtractor](https://github.com/OatsCG/PlaylistExtractor) for help.
+* `<platform>`: One of `['apple', 'spotify']`
+* `<id>`: The ID in the playlist's URL
+```
+/playlisttracks?platform=<platform>&id=<id> -> {
+    name: String
+    description: String
+    artwork: String
+    playlistID: String
+    tracks: PlaylistTrack[]
+}
+```
+### `/explore`
+Returns shelves to display in the Explore page
+```
+/explore -> {
+    Shelves: ExploreShelf[]
+}
+```
+### `/quick?q=<query>`
+Returns tracks to be displayed as the user is typing a search
+* `<query>`: 
+```
+/quick?q=<query> -> {
+    Tracks: FetchedTrack[]
 }
 ```
