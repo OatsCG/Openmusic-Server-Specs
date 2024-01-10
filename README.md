@@ -4,6 +4,20 @@ An *openmusic-compatible* server is any public server which [the openmusic app](
 ### Copyright Notice
 The content provided by your server MUST be owned by you, the content deliverer. It is the responsibility of the content deliverer to ensure that copyright laws for your country are followed, and to ensure the legal safety of openmusic users. Failure to do so may result in server termination by your ISP, and legal pursuit by the true owners of the content you are delivering.
 
+## Preliminary Info
+### Database Structure and Best Practices
+Your database may or may not strictly conform to the Return Types, however to ensure consistency for openmusic users (especially when items are saved to a Library or Playlists), the following heuristics should be followed when returning data via server endpoints:
+1. **Object IDs must be persistent.** The following abstract data should never change:
+  * Track.TrackID
+  * Album.AlbumID
+  * Artist.ArtistID
+  * FetchedPlayback.PlaybackID
+2. **Object IDs must be unique within types.** No two Tracks shall share a TrackID, and no two Playbacks shall share a PlaybackID. HOWEVER, TrackA.Playback_Clean may contain the same PlaybackID as TrackB.Playback_Clean.
+3. **Playback URLs must be a streamable AND downloadable direct file URL.** The openmusic app supports [audio types supported by Apple's AVFoundation](https://developer.apple.com/documentation/avfoundation/avfiletype), but m4a is suggested for streamability and speed. Test thoroughly with the app.
+4. **Follow the Return Types strictly,** or else the app will not recognize the data, and will show nothing to the user. To help, set up your server so that you can see what endpoints the app is fetching and where.
+\
+This is an incomplete list of heuristics, but should be enough to get started. Once your database is created, test scripts to return albums, tracks and playbacks. Then, start with some simple endpoints like `/search` and `/playback`, and continue with the rest from there. Remember to test thoroughly in the app.
+
 
 # Return Types
 The following define the return objects that each endpoint conforms to, in pseudocode. \<type\>? denotes an optional (may contain nil), \<type\>[] denotes an array containing that type.
