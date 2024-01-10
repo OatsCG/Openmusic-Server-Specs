@@ -167,7 +167,7 @@ Returns the playback with `FetchedPlayback.PlaybackID=<PlaybackID>`
 Returns tracks that fuzzy match `<song>`, `<album>`, and `<artist>`
 * `<song>`: Track title
 * `<album>`: Album title
-* `<artists>`: Artist names, comma seperated
+* `<artist>`: Artist names, comma seperated
 ```
 /exact?song=<song>&album=<album>&artist=<artist> -> {
     Tracks: ImportedTrack[]
