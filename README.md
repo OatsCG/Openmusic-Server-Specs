@@ -15,7 +15,8 @@ Your database may or may not strictly conform to the Return Types, however to en
 2. **Object IDs must be unique within types.** No two Tracks shall share a TrackID, and no two Playbacks shall share a PlaybackID. HOWEVER, TrackA.Playback_Clean may contain the same PlaybackID as TrackB.Playback_Clean.
 3. **Playback URLs must be a streamable AND downloadable direct file URL.** The openmusic app supports [audio types supported by Apple's AVFoundation](https://developer.apple.com/documentation/avfoundation/avfiletype), but m4a is suggested for streamability and speed. Test thoroughly with the app.
 4. **Follow the Return Types strictly,** or else the app will not recognize the data, and will show nothing to the user. To help, set up your server so that you can see which endpoints the app is fetching and where.
-\
+
+
 This is an incomplete list of heuristics, but should be enough to get started. Once your database is created, test scripts to return albums, tracks and playbacks. Then, start with some simple endpoints like `/search` and `/playback`, and continue with the rest from there. Remember to test thoroughly in the app.
 
 
