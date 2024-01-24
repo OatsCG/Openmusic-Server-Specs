@@ -47,8 +47,8 @@ FetchedTrack -> {
 ImportedTrack -> {
     TrackID: String
     Title: String
-    Playback_Clean: Int?
-    Playback_Explicit: Int?
+    Playback_Clean: String?
+    Playback_Explicit: String?
     Length: Int
     Index: Int
     Views: Int
