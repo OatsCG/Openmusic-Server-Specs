@@ -33,8 +33,8 @@ The following define the return objects that each endpoint conforms to, in pseud
 FetchedTrack -> {
     TrackID: String
     Title: String
-    Playback_Clean: Int?
-    Playback_Explicit: Int?
+    Playback_Clean: String?
+    Playback_Explicit: String?
     Length: Int
     Index: Int
     Views: Int
@@ -116,7 +116,7 @@ FetchedArtist -> {
 ### FetchedPlayback
 ```
 FetchedPlayback -> {
-    PlaybackID: Int
+    PlaybackID: String
     YT_Video_ID: String
     YT_Audio_ID: String
     Playback_Audio_URL: String
