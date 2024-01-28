@@ -140,9 +140,24 @@ Returns the status of the server. Hopefully you set `online=True`.
 ```
 /status -> {
     online: Bool
+    title: String
+    body: String
+    footer: String
     om_verify: String
 }
 ```
+
+The following shows what a /status return will look like in the openmusic app.
+```
+{
+    "online": true,
+    "title": "Official OMDB Test Server",
+    "body": "Follow me on GitHub! ~OatsCG",
+    "footer": "Updated Jan 24 2023",
+    "om_verify": ""
+}
+```
+
 ## `/search?q=<query>`
 Returns search results for `<query>`
 ```
