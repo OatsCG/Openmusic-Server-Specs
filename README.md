@@ -147,7 +147,7 @@ Returns the status of the server. Hopefully you set `online=True`.
 }
 ```
 
-The following shows what a /status return will look like in the openmusic app.
+The following shows what a `/status` return will look like in the openmusic app.
 ```
 {
     "online": true,
