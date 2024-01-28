@@ -157,6 +157,7 @@ The following shows what a /status return will look like in the openmusic app.
     "om_verify": ""
 }
 ```
+![Status Demo](https://raw.githubusercontent.com/OatsCG/openmusic-Server-Specs/main/statusDemo.png)
 
 ## `/search?q=<query>`
 Returns search results for `<query>`
