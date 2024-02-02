@@ -1,11 +1,11 @@
 # openmusic-compatible server specifications
-An *openmusic-compatible* server is any public server which [the openmusic app](https://openmusic.app) may communicate with to serve music metadata and audio. A server may be abstract and created with your preferred language/library of choice, with your own algorithms and caching; so long as each endpoint conforms to the Return Types defined below, it is *openmusic-compatible*.
+An *openmusic-compatible* server is any public server which [the openmusic app](https://openmusic.app) may communicate with to serve music metadata and audio. A server may be abstract and created with your preferred language/library of choice, with your own algorithms and caching; so long as each endpoint conforms to the [Return Types](#return-types) defined below, it is *openmusic-compatible*.
 
 ### Copyright Notice
 The content provided by your server MUST be licenced or owned by you, the content deliverer. It is the responsibility of the content deliverer to ensure that copyright laws for your country are followed, and to ensure the legal safety of openmusic users. Failure to do so may result in server termination by your ISP, and legal pursuit by the owners of the content you are delivering. Research your country's copyright laws before proceeding.
 
 ### Getting Started
-Begin by getting familiar with the Return Types and Endpoints BEFORE creating your server. Once comfortable, read the Heuristics and create your database. Check out the [Downloadable OpenMusic Database](https://github.com/OatsCG/OMDB) for inspiration on designing your database.
+Begin by getting familiar with the [Return Types](#return-types) and [Endpoints](#server-endpoints) BEFORE creating your server. Once comfortable, read the [Heuristics](#database-structure-and-heuristics) and create your database. Check out the [Downloadable OpenMusic Database](https://github.com/OatsCG/OMDB) for inspiration on designing your database.
 
 
 
