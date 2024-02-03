@@ -1,7 +1,7 @@
 # openmusic-compatible server specifications
 An *openmusic-compatible* server is any public server which [the openmusic app](https://openmusic.app) may communicate with to serve music metadata and audio. A server may be abstract and created with your preferred language/library of choice, with your own algorithms and caching; so long as each endpoint conforms to the [Return Types](#return-types) defined below, it is *openmusic-compatible*.
 
-### An example server can be accessed at [server.openmusic.app](https://server.openmusic.app).
+### An example server can be accessed at https://server.openmusic.app.
 server.openmusic.app is a redirect to "http://64.23.182.29/". Redirect domains will still work in the openmusic app.
 
 ### Copyright Notice
