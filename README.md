@@ -1,10 +1,10 @@
-# openmusic-compatible server specifications
-An *openmusic-compatible* server is any public server which [the openmusic app](https://openmusic.app) may communicate with to serve music metadata and audio. A server may be abstract and created with your preferred language/library of choice, with your own algorithms and caching; so long as each endpoint conforms to the [Return Types](#return-types) defined below, it is *openmusic-compatible*.
+# Openmusic-Compatible server specifications
+An *Openmusic-Compatible* server is any public server which [the Openmusic app](https://Openmusic.app) may communicate with to serve music metadata and audio. A server may be abstract and created with your preferred language/library of choice, with your own algorithms and caching; so long as each endpoint conforms to the [Return Types](#return-types) defined below, it is *Openmusic-Compatible*.
 
-### A demo server can be accessed at https://server.openmusic.app.
+### A demo server can be accessed at https://server.Openmusic.app.
 
 ### Copyright Notice
-The content provided by your server MUST be licenced or owned by you, the content deliverer. It is the responsibility of the content deliverer to ensure that copyright laws for your country are followed, and to ensure the legal safety of openmusic users. Failure to do so may result in server termination by your ISP, and legal pursuit by the owners of the content you are delivering. Research your country's copyright laws before proceeding.
+The content provided by your server MUST be licenced or owned by you, the content deliverer. It is the responsibility of the content deliverer to ensure that copyright laws for your country are followed, and to ensure the legal safety of Openmusic users. Failure to do so may result in server termination by your ISP, and legal pursuit by the owners of the content you are delivering. Research your country's copyright laws before proceeding.
 
 ### Getting Started
 Begin by getting familiar with the [Return Types](#return-types) and [Endpoints](#server-endpoints) BEFORE creating your server. Once comfortable, read the [Heuristics](#database-structure-and-heuristics) and create your database. Check out the [Downloadable OpenMusic Database](https://github.com/OatsCG/OMDB) for inspiration on designing your database.
@@ -13,14 +13,14 @@ Begin by getting familiar with the [Return Types](#return-types) and [Endpoints]
 
 ## Preliminary Info
 ### Database Structure and Heuristics
-Your database may or may not strictly conform to the Return Types, however to ensure consistency for openmusic users (especially when items are saved to a Library or Playlists), the following heuristics should be followed when returning data via server endpoints:
+Your database may or may not strictly conform to the Return Types, however to ensure consistency for Openmusic users (especially when items are saved to a Library or Playlists), the following heuristics should be followed when returning data via server endpoints:
 1. **Object IDs must be persistent.** The following abstract data should never change:
   * Track.TrackID
   * Album.AlbumID
   * Artist.ArtistID
   * FetchedPlayback.PlaybackID
 2. **Object IDs must be unique within types.** No two Tracks shall share a TrackID, and no two Playbacks shall share a PlaybackID. HOWEVER, TrackA.Playback_Clean may contain the same PlaybackID as TrackB.Playback_Clean.
-3. **Playback URLs must be a streamable AND downloadable direct file URL.** The openmusic app supports [audio types supported by Apple's AVFoundation](https://developer.apple.com/documentation/avfoundation/avfiletype), but m4a is suggested for streamability and speed. Test thoroughly with the app.
+3. **Playback URLs must be a streamable AND downloadable direct file URL.** The Openmusic app supports [audio types supported by Apple's AVFoundation](https://developer.apple.com/documentation/avfoundation/avfiletype), but m4a is suggested for streamability and speed. Test thoroughly with the app.
 4. **Follow the Return Types strictly,** or else the app will not recognize the data, and will show nothing to the user. To help, set up your server so that you can see which endpoints the app is fetching and where.
 
 
@@ -138,7 +138,7 @@ An endpoint may return a single Return Type as a dictionary, or a dictionary con
 ## `/status`
 Returns the status of the server. Hopefully you set `online=True`.
 
-`om_verify` is the verification code used to denote your server as "**Verified**" in the openmusic app. If you do not run a trusted server, leave `om_verify` blank and the openmusic app will denote your server as "**Online**".
+`om_verify` is the verification code used to denote your server as "**Verified**" in the Openmusic app. If you do not run a trusted server, leave `om_verify` blank and the Openmusic app will denote your server as "**Online**".
 ```
 /status -> {
     online: Bool
@@ -149,7 +149,7 @@ Returns the status of the server. Hopefully you set `online=True`.
 }
 ```
 
-The following shows what a `/status` return will look like in the openmusic app.
+The following shows what a `/status` return will look like in the Openmusic app.
 ```
 {
     "online": true,
