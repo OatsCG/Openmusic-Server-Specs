@@ -1,7 +1,7 @@
 # Openmusic-Compatible server specifications
-An *Openmusic-Compatible* server is any public server which [the Openmusic app](https://Openmusic.app) may communicate with to serve music metadata and audio. A server may be abstract and created with your preferred language/library of choice, with your own algorithms and caching; so long as each endpoint conforms to the [Return Types](#return-types) defined below, it is *Openmusic-Compatible*.
+An *Openmusic-Compatible* server is any public server which [the Openmusic app](https://openmusic.app) may communicate with to serve music metadata and audio. A server may be abstract and created with your preferred language/library of choice, with your own algorithms and caching; so long as each endpoint conforms to the [Return Types](#return-types) defined below, it is *Openmusic-Compatible*.
 
-### A demo server can be accessed at https://server.Openmusic.app.
+### A demo server can be accessed at https://server.openmusic.app.
 
 ### Copyright Notice
 The content provided by your server MUST be licenced or owned by you, the content deliverer. It is the responsibility of the content deliverer to ensure that copyright laws for your country are followed, and to ensure the legal safety of Openmusic users. Failure to do so may result in server termination by your ISP, and legal pursuit by the owners of the content you are delivering. Research your country's copyright laws before proceeding.
